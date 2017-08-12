@@ -20,6 +20,10 @@ public class Main {
 
     private static void createVehicles() {
         Car.nameList = FileLoader.loadFile("data/nameList.txt");
+        if (Car.nameList.size() == 0) {
+            System.err.println("No name list file found. Exiting.");
+            System.exit(1);
+        }
         for (int i = 0; i < VEHICLE_PER_TYPE; i++) {
             vehicles.add(new Car(rng));
             vehicles.add(new Motorcycle());
