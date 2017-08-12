@@ -10,15 +10,20 @@ class Car extends Vehicle {
     private static int speedLimit = -1;
 
     static void setSpeedLimit(int limit) {
-
+        speedLimit = limit;
     }
 
     Car(Random rng) {
-
+        speed = BASE_SPEED + rng.nextInt(SPEED_MODIFIER_MAX + 1);
+        name = nameList.get(rng.nextInt(nameList.size())) + nameList.get(rng.nextInt(nameList.size()));
     }
 
     @Override
     void moveForAnHour(Random rng, boolean isRaining) {
-
+        if (speedLimit != -1) {
+            distanceTravelled += speed;
+        } else {
+            distanceTravelled += speedLimit;
+        }
     }
 }

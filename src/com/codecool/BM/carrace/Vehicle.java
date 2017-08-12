@@ -3,7 +3,7 @@ package com.codecool.BM.carrace;
 import java.util.Random;
 
 abstract class Vehicle {
-    private int speed;
+    protected int speed;
     int distanceTravelled = 0;
     String name;
 
