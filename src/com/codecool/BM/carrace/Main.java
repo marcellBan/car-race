@@ -23,7 +23,7 @@ public class Main {
         for (int i = 0; i < VEHICLE_PER_TYPE; i++) {
             vehicles.add(new Car(rng));
             vehicles.add(new Motorcycle());
-            vehicles.add(new Truck());
+            vehicles.add(new Truck(rng));
         }
     }
 
